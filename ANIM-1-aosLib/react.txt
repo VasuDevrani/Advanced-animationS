@@ -1,0 +1,37 @@
+import "./App.css";
+import AOS from 'aos'
+import "aos/dist/aos.css";
+import { useEffect } from "react";
+
+function App() {
+
+  useEffect(() => {
+    AOS.init({
+      offset: 200,
+      duration: 1000,
+    });
+    AOS.refresh();
+  }, [])
+
+  return (
+    <div className="App">
+      <h1>AOS Animations</h1>
+      <div class="boxes">
+        <div class="box" data-aos="fade-in"></div>
+        <div class="box" data-aos="fade-in"></div>
+        <div class="box" data-aos="flip-left"></div>
+        <div className="int-box">
+        <div class="box" data-aos="slide-right"></div>
+        <div class="box" data-aos="slide-left"></div>
+        </div>
+        <div class="box" data-aos="fade-up-left"></div>
+        <div class="box" data-aos="zoom-out-down"></div>
+        <div class="box" data-aos="fade-in"></div>
+        <div class="box" data-aos="zoom-in-left"></div>
+        <div class="box" data-aos="slide-up"></div>
+      </div>
+    </div>
+  );
+}
+
+export default App;

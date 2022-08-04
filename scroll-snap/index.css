@@ -1,0 +1,44 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100vh;
+}
+.one,
+.two,
+.three,
+.four,
+.five {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  scroll-snap-align: start;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+.container {
+  height: 100vh;
+  width: 100%;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  scroll-behavior: auto;
+  transition: backgroundColor 700ms ease-in;
+}
+img {
+    height: 70%;
+}
+footer {
+  color: white;
+  background-color: rgb(2, 2, 100);
+  height: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+}

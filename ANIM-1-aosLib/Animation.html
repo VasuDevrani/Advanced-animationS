@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AOS animations</title>
+    <!-- aos library style cdn -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- custom styles -->
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        text-align: center;
+      }
+      .boxes {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 400vh;
+      }
+      .box {
+        width: 40%;
+        height: 30vh;
+        background-color: blue;
+        margin-top: 40px;
+        box-shadow: 5px 10px #888888;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>AOS Animations</h1>
+    <div class="boxes">
+      <div class="box" data-aos="fade-in"></div>
+      <div class="box" data-aos="fade-in"></div>
+      <div class="box" data-aos="fade-in"></div>
+      <div class="box" data-aos="flip-left"></div>
+      <div class="box" data-aos="fade-in"></div>
+      <div class="box" data-aos="fade-up-left"></div>
+      <div class="box" data-aos="zoom-out-down"></div>
+      <div class="box" data-aos="fade-in"></div>
+      <div class="box" data-aos="zoom-in-left"></div>
+      <div class="box" data-aos="slide-up"></div>
+    </div>
+  </body>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    // You can also pass an optional settings object
+    AOS.init({
+      offset: 200,
+      duration: 1000,
+    });
+
+    document.addEventListener("", () => {
+        console.log('hello');
+    });
+  </script>
+</html>

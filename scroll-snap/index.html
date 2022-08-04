@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <title>Snappy</title>
+  </head>
+  <body>
+    <div class="container">
+      <section class="one">
+        <img
+          class="colorOne"
+          src="https://backstagetalks.com/img/backstagetalks_cover_issue_5.png"
+          alt="one"
+        />
+      </section>
+      <section class="two">
+        <img
+          class="colorTwo"
+          src="https://backstagetalks.com/img/backstagetalks_cover_issue_4.png"
+          alt="two"
+        />
+      </section>
+      <section class="three">
+        <img
+          class="colorThree"
+          src="https://backstagetalks.com/img/backstagetalks_cover_issue_3.png"
+          alt="three"
+        />
+      </section>
+      <section class="four">
+        <img
+          class="colorFour"
+          src="https://backstagetalks.com/img/backstagetalks_cover2017.png"
+          alt="four"
+        />
+      </section>
+      <section class="five">
+        <img
+          class="colorFive"
+          src="https://backstagetalks.com/img/backstagetalks_cover2016_n.png"
+          alt="five"
+        />
+      </section>
+    </div>
+    <footer>Created By VasuDevrani</footer>
+
+    <script>
+      const one = document.querySelector(".colorOne");
+      const two = document.querySelector(".colorTwo");
+      const three = document.querySelector(".colorThree");
+      const four = document.querySelector(".colorFour");
+      const five = document.querySelector(".colorFive");
+
+      const cont = document.querySelector(".container");
+
+      observerOne = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.intersectionRatio > 0) {
+            cont.style.backgroundColor = "blue";
+          }
+        });
+      });
+      observerFive = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.intersectionRatio > 0) {
+            setTimeout(() => {
+              cont.style.backgroundColor = "crimson";
+            }, 400);
+          }
+        });
+      });
+      observerFour = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.intersectionRatio > 0) {
+            setTimeout(() => {
+              cont.style.backgroundColor = "purple";
+            }, 400);
+          }
+        });
+      });
+      observerThree = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.intersectionRatio > 0) {
+            setTimeout(() => {
+              cont.style.backgroundColor = "yellow";
+            }, 400);
+          }
+        });
+      });
+      observerTwo = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.intersectionRatio > 0) {
+            setTimeout(() => {
+              cont.style.backgroundColor = "orange";
+            }, 400);
+          }
+        });
+      });
+
+      observerOne.observe(one);
+      observerTwo.observe(two);
+      observerThree.observe(three);
+      observerFour.observe(four);
+      observerFive.observe(five);
+    </script>
+  </body>
+</html>

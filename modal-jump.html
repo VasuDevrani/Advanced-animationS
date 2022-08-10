@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login-Modal</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            background-color: skyblue;
+            height: 300vh;
+        }
+        .container.blur{
+            background-color: grey;
+        }
+        .login{
+            position: absolute;
+            background-color: white;
+            padding: 20px;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            left: 38vw;
+            top: 30%;
+            transform: translateY(-200%);
+            opacity: 0;
+            transition: all 300ms;
+        }
+        .bringBack{
+            transform: translateY(0);
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <form class="login">
+        <h1>Log In</h1>
+        <input type="email" placeholder="email">
+        <input type="password" placeholder="password">
+        <button type="submit">Submit</button>
+    </form>
+    <div class="container">
+        <button class="bring">Bring</button>
+    </div>
+    <script>
+        const handle = document.querySelector('.bring');
+        const container = document.querySelector('.container');
+        const form = document.querySelector('.login')
+        
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            form.classList.remove('bringBack')
+            container.classList.remove('blur')
+        })
+
+        handle.addEventListener('click', () => {
+            container.classList.add('blur')
+            form.classList.add('bringBack')
+        })
+    </script>
+</body>
+</html>
